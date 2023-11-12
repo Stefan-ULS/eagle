@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+   body, html {
+        height: 100%;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .content {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh; /* Make content at least as tall as the viewport */
+        display: flex;
+        flex-direction: column;
+    }
+    .content-section {
+        min-height: 100vh;
+        padding: 1rem;
+        flex-grow: 1; /* Allows this section to grow and push the footer down */
+    }
+
+</style>
+{% endblock %}
+
+
+    {% block header %}
+
+    
+    {% endblock %}
+
+       {% block main %} 
+       <video autoplay muted loop class="video-background">
+        <source src="/static/photo/life.mp4" type="video/mp4">
+
+    </video>
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Hero Section -->
+        <div class="flex items-center justify-center h-screen">
+            <div class="text-center text-white">
+                <h1 class="text-5xl font-bold mb-6">Achive your financial goals while having time for what counts the most</h1>
+                <p class="text-xl mb-4">Your trusted partner in investment strategies</p>
+            </div>
+        </div>
+
+        <!-- Additional Sections (Scrollable) -->
+        <div class="content-section text-white px-8 mx-8">
+            <h2 class="text-3xl font-semibold text-center mb-8 ">About Us</h2>
+            <p class=" text-lg ">
+                Eagles Investors is a leading firm in investment management, providing expert advice and strategies to help you achieve your financial goals. Our team of experienced professionals is dedicated to offering personalized solutions tailored to your unique needs.
+            </p>
+            <a href="{{url_for('team_page')}}" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 float-right">Meet the expertes.</a>
+            <!-- More content can be added here -->
+        </div>
+    </div>
+       
+       {% endblock %}
+
+    {% block footer %} 
+    
+    
+    {% endblock %}
+
+
+
+
+    {% block scripts  %} 
+    
+    {% endblock %}
